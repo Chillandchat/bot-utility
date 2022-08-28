@@ -1,0 +1,29 @@
+{
+  "name": "@chillandchat/bot-utility",
+  "version": "1.0.0",
+  "description": "This is the official Chill&chat bot utility CLI, this CLI allows you to create bots and interact with the bot account.",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/Chillandchat/bot-utility.git",
+  "author": "Alvin Cheng <chengalvin333@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "echo 'Running app...' && ts-node ./src/index.ts",
+    "build": "echo 'Building...' && tsc && echo 'Done!'",
+    "create-bin": "echo 'Building binary files...' && pkg ./build/**/*.js --output bot-utility && echo 'Done!'"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "inquirer": "^7.0.0",
+    "ts-node": "^10.9.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.1",
+    "@types/node": "^18.7.13",
+    "@types/uuid": "^8.3.4",
+    "pkg": "^5.8.0",
+    "typescript": "^4.8.2"
+  }
+}
