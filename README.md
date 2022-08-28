@@ -1,7 +1,7 @@
 <p align="center"how><img src="https://github.com/Chill-and-chat/Chill-and-chat/blob/master/logo.svg/" style="width:12rem;"/></p>
 
 # Chill&chat bot utility CLI
-![](https://img.shields.io/github/repo-size/chillandchat/bot-utility) ![](https://img.shields.io/github/v/release/chillandchat/bot-utility) ![](https://img.shields.io/github/issues-pr-closed/chillandchat/chill-chat) ![](https://img.shields.io/github/issues-pr-raw/chillandchat/bot-utility)[![CodeQL](https://github.com/Chillandchat/bot-utility/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Chillandchat/bot-utility/actions/workflows/codeql-analysis.yml)
+![](https://img.shields.io/github/repo-size/chillandchat/bot-utility) ![](https://img.shields.io/github/v/release/chillandchat/bot-utility) ![](https://img.shields.io/github/issues-pr-closed/chillandchat/chill-chat) ![](https://img.shields.io/github/issues-pr-raw/Chillandchat/bot-utility) [![CodeQL](https://github.com/Chillandchat/bot-utility/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Chillandchat/bot-utility/actions/workflows/codeql-analysis.yml)
 
 This is the Chill&chat bot utility CLI, using this CLI you can manage your bot accounts and build/deploy bots with the power of Javascript and Typescript. Please know that this CLI is still under development, it may be prone to bugs and issues. Stay tuned for futher updates!
 
