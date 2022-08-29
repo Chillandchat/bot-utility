@@ -10,7 +10,6 @@ const main = async (): Promise<void> => {
   console.clear();
 
   console.log("Welcome to the Chill&chat Bot utility CLI!");
-  let authenticated: boolean = false;
 
   await inquirer
     .prompt([
