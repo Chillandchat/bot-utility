@@ -10,7 +10,7 @@
   "scripts": {
     "start": "echo 'Running app...' && ts-node ./src/index.ts",
     "build": "echo 'Building...' && tsc && echo 'Done!'",
-    "create-bin": "echo 'Building binary files...' && pkg ./build/**/*.js --output bot-utility && echo 'Done!'"
+    "create-bin": "echo 'Building binary files...' && pkg build/**/*.js --output bot-utility && echo 'Done!'"
   },
   "dependencies": {
     "axios": "^0.27.2",
