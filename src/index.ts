@@ -1,10 +1,14 @@
+import { RoomType } from "./scripts/index.d";
 import inquirer from "inquirer";
 
 import { AuthType } from "./scripts";
 import getUser from "./scripts/getUser";
+import joinRoom from "./scripts/joinRoom";
 import login from "./scripts/login";
 import signup from "./scripts/signup";
 import updateDescription from "./scripts/updateDescription";
+import getRoom from "./scripts/getRooms";
+import removeRoom from "./scripts/removeRoom";
 
 const main = async (): Promise<void> => {
   console.clear();
@@ -68,9 +72,78 @@ const main = async (): Promise<void> => {
                     name: "value",
                     type: "list",
                     message: "Please select a option to continue...",
-                    choices: ["Update description"],
+                    choices: ["Update description", "Join room", "Leave room"],
                   })
                   .then(async (answer: any): Promise<void> => {
+                    if (answer.value === "Leave room") {
+                      let roomList: string[] = [];
+
+                      //@ts-ignore
+                      await getRoom(user?.username)
+                        .then((rooms: RoomType[]): void => {
+                          rooms.forEach((room: RoomType) => {
+                            roomList.push(room.id);
+                          });
+                        })
+                        .catch((err: unknown): void => {
+                          console.error(err);
+                          process.exit(1);
+                        });
+                      await inquirer
+                        .prompt({
+                          type: "list",
+                          choices: roomList,
+                          name: "value",
+                          message: "Please select the room to leave:",
+                        })
+                        .then((answer: any): void => {
+                          // @ts-ignore
+                          removeRoom(answer.value, user.username)
+                            .then((): void => {
+                              console.log("Room left.");
+                            })
+                            .catch((err: unknown): void => {
+                              console.error(err);
+                              process.exit(1);
+                            });
+                        });
+                    }
+
+                    if (answer.value === "Join room") {
+                      let id: string, password: string;
+
+                      await inquirer
+                        .prompt({
+                          name: "value",
+                          type: "input",
+                          message: "Room ID:",
+                        })
+                        .then((answer: any) => {
+                          id = answer.value;
+                        });
+
+                      await inquirer
+                        .prompt({
+                          name: "value",
+                          type: "password",
+                          message: "Room password:",
+                        })
+                        .then((answer: any) => {
+                          password = answer.value;
+                        });
+                      //@ts-ignore
+                      await joinRoom(user?.username, id, password)
+                        .then((): void => {
+                          console.log("Room has been joined.");
+                          process.exit(0);
+                        })
+                        .catch((_err: unknown): void => {
+                          console.error(
+                            "Room ID or password incorrect! Please try again."
+                          );
+                          process.exit(1);
+                        });
+                    }
                     if (answer.value === "Update description") {
                       await inquirer
                         .prompt({
