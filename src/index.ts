@@ -1,6 +1,6 @@
-import { RoomType } from "./scripts/index.d";
 import inquirer from "inquirer";
 
+import { RoomType } from "./scripts/index.d";
 import { AuthType } from "./scripts";
 import getUser from "./scripts/getUser";
 import joinRoom from "./scripts/joinRoom";
