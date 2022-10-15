@@ -72,9 +72,37 @@ const main = async (): Promise<void> => {
                     name: "value",
                     type: "list",
                     message: "Please select a option to continue...",
-                    choices: ["Update description", "Join room", "Leave room"],
+                    choices: [
+                      "Update description",
+                      "Join room",
+                      "Leave room",
+                      "Get bot key",
+                    ],
                   })
                   .then(async (answer: any): Promise<void> => {
+                    if (answer.value === "Get bot key") {
+                      let key: string = "";
+                      const keyRandomNumber: number = Math.floor(
+                        // @ts-ignore
+                        Math.random() * user.id.length
+                      );
+
+                      const keyRandomInserter = [
+                        // @ts-ignore
+                        user.id.slice(0, keyRandomNumber),
+                        process.env.BOT_KEY_PASS, // @ts-ignore
+                        user.id.slice(keyRandomNumber, user.id.length),
+                      ];
+
+                      keyRandomInserter.forEach((value: string): void => {
+                        key = key.concat(value);
+                      });
+                      console.log("Your bot key is:");
+                      console.log(key);
+
+                      process.exit(0);
+                    }
+
                     if (answer.value === "Leave room") {
                       let roomList: string[] = [];
 
