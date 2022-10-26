@@ -9,8 +9,8 @@
   "private": false,
   "scripts": {
     "start": "echo 'Running app...' && ts-node ./src/index.ts",
-    "build": "echo 'Building...' && tsc && echo 'Done!'",
-    "create-bin": "echo 'Building binary files...' && pkg build/**/*.js --output bot-utility -t node14-macos,node12-linux,node14-linux,node14-win && echo 'Done!'"
+    "build": "echo 'Building...' && cp -a ./src/ ./build/tmp && node build.js && tsc && echo 'Done!'",
+    "create-bin": "echo 'Building binary files...' && pkg ./build/js/index.js --output bot-utility -t node14-macos,node12-linux,node14-linux,node14-win && echo 'Done!'"
   },
   "dependencies": {
     "axios": "^0.27.2",
