@@ -239,7 +239,7 @@ const main = async (): Promise<void> => {
             message: "Set password",
           })
           .then((answer: any): void => {
-            if (answer.value.length > 5) {
+            if (answer.value.length < 5) {
               console.error(
                 "Error: Password must be more than 5 letters long."
               );
