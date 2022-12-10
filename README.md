@@ -1,4 +1,4 @@
-<p align="center"how><img src="https://github.com/Chill-and-chat/Chill-and-chat/blob/master/logo.svg/" style="width:12rem;"/></p>
+<p align="center"how><img src="https://github.com/Chillandchat/.github/blob/main/logo.svg" style="width:12rem;"/></p>
 
 # Chill&chat bot utility CLI
 ![](https://img.shields.io/github/repo-size/chillandchat/bot-utility) ![](https://img.shields.io/github/v/release/chillandchat/bot-utility) ![](https://img.shields.io/github/issues-pr-closed/chillandchat/chill-chat) ![](https://img.shields.io/github/issues-pr-raw/Chillandchat/bot-utility) [![CodeQL](https://github.com/Chillandchat/bot-utility/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Chillandchat/bot-utility/actions/workflows/codeql-analysis.yml)
