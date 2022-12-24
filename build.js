@@ -19,8 +19,6 @@ for (const [key, data] of Object.entries(variables)) {
 fs.writeFileSync("./build/tmp/vars.ts", envFileWriteData);
 
 let indexFileWriteData = fs.readFileSync("./src/index.ts").toString();
-indexFileWriteData =
-  `import {BOT_KEY_PASS} from "./vars"; \n` + indexFileWriteData;
 indexFileWriteData = indexFileWriteData.replace("dotenv.config();", "");
 indexFileWriteData = indexFileWriteData.replace(
   `import dotenv from "dotenv";`,
