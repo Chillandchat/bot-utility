@@ -4,7 +4,7 @@
   "description": "This is the official Chill&chat bot utility CLI, this CLI allows you to create bots and interact with the bot account.",
   "main": "./src/index.ts",
   "repository": "https://github.com/Chillandchat/bot-utility.git",
-  "author": "Alvin Cheng <chengalvin333@gmail.com>",
+  "author": "Alvin Cheng <eventide1029@gmail.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
